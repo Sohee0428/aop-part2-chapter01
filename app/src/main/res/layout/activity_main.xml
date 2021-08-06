@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center|left"
+    android:orientation="vertical"
     android:padding="15dp"
     tools:context=".MainActivity">
 
@@ -13,36 +13,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/height"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/heightEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:hint="cm"
-        android:inputType="numberSigned"
-        android:layout_marginBottom="15dp"/>
+        android:inputType="numberSigned" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/weight"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/weightEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
         android:hint="kg"
-        android:inputType="number"
-        android:layout_marginBottom="35dp"/>
+        android:inputType="number" />
 
     <Button
+        android:id="@+id/resultBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="확인 하기"/>
-
+        android:text="확인 하기" />
 
 </LinearLayout>
