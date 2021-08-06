@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity() {
             val height: Int = heightEdt.text.toString().toInt()
             val weight: Int = weightEdt.text.toString().toInt()
 
-
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("height", height)
+                .putExtra("weight", weight)
+            startActivity(intent)
         }
     }
 }
