@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,15 +25,33 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            val womanBtn = findViewById<RadioButton>(R.id.womanBtn)
+            val manBtn = findViewById<RadioButton>(R.id.manBtn)
+            val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
+            radioGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    R.id.womanBtn -> womanBtn.text = "woman"
+                    R.id.manBtn -> manBtn.text = "man"
+                    else -> {
+                        Toast.makeText(this, "성별을 선택해주세요.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
 //            이 아래로는 절대 빈 값이 올 수 없음
 
-            val height: Int = heightEdt.text.toString().toInt()
-            val weight: Int = weightEdt.text.toString().toInt()
+                val height: Int = heightEdt.text.toString().toInt()
+                val weight: Int = weightEdt.text.toString().toInt()
+                val woman: String = womanBtn.text.toString()
+                val man: String = manBtn.text.toString()
 
-            val intent = Intent(this, ResultActivity::class.java)
-            intent.putExtra("height", height)
-                .putExtra("weight", weight)
-            startActivity(intent)
+
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("height", height)
+                    .putExtra("weight", weight)
+                    .putExtra("woman", woman)
+                    .putExtra("man", man)
+                startActivity(intent)
+            }
         }
     }
 }

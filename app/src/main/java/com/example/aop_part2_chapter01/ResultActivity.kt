@@ -2,9 +2,13 @@ package com.example.aop_part2_chapter01
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.pow
+import kotlin.math.sqrt
 
 class ResultActivity : AppCompatActivity() {
 
@@ -27,10 +31,15 @@ class ResultActivity : AppCompatActivity() {
             else -> "저체중"
         }
 
+
+
+
         val bmiResultIntTxt = findViewById<TextView>(R.id.bmiResultIntTxt)
         val bmiResultStringTxt = findViewById<TextView>(R.id.bmiResultStringTxt)
+        val standardWeightTxt = findViewById<TextView>(R.id.standardWeightTxt)
 
         bmiResultIntTxt.text = bmi.toString()
         bmiResultStringTxt.text = "$resultText 입니다."
+
     }
 }
